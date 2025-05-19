@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace GeometricShapes
 {
-    internal class Triangle : Shape
+    public class Triangle : Shape
     {
-        private Dictionary<string, double> side;
-
         private double sideA { get; }
         private double sideB { get; }
         private double sideC { get; }
@@ -23,7 +21,7 @@ namespace GeometricShapes
                 throw new ArgumentOutOfRangeException("The lengths of the sides must be positive.");
             }
 
-            if (a + b > c && a + c > b && b + c > a)
+            if (a + b < c || a + c < b || b + c < a)
             {
                 throw new ArgumentOutOfRangeException("The sum of any two sides must be greater than the third");
             }
@@ -33,28 +31,28 @@ namespace GeometricShapes
             sideC = c;
         }
         public override double CalculateArea()
-        {           
+        {
 
-            if (sideA > sideB || sideA > sideC)
+            if (sideA >= sideB && sideA >= sideC)
             {
-                if (IsRightRriangle(sideA, sideB, sideC))
+                if (IsRightTriangle(sideA, sideB, sideC))
                 {
-                    return RightTriangleAria(sideB, sideC);
+                    return RightTriangleArea(sideB, sideC);
                 }
             }
             else if
-                (sideB > sideA || sideB > sideC)
+                (sideB >= sideA && sideB >= sideC)
             {
-                if (IsRightRriangle(sideB, sideA, sideC))
+                if (IsRightTriangle(sideB, sideA, sideC))
                 {
-                    return RightTriangleAria(sideA, sideC);
+                    return RightTriangleArea(sideA, sideC);
                 }
             }
             else
             {
-                if (IsRightRriangle(sideC, sideA, sideB))
+                if (IsRightTriangle(sideC, sideA, sideB))
                 {
-                    return RightTriangleAria(sideA, sideB);
+                    return RightTriangleArea(sideA, sideB);
                 }
             }
 
@@ -62,16 +60,17 @@ namespace GeometricShapes
             double area = Math.Sqrt(semiperimeter * (semiperimeter - sideA) * (semiperimeter - sideB) * (semiperimeter - sideC));
             return area;
 
+
         }
-        private bool IsRightRriangle(double hypotenuse, double leg1, double leg2)
+        private bool IsRightTriangle(double hypotenuse, double leg1, double leg2)
         {
             double PythagoreanTheorem = hypotenuse * hypotenuse - (leg1 * leg1 + leg2 * leg2);
-            return PythagoreanTheorem < 0.000001;
+            return PythagoreanTheorem>0 && PythagoreanTheorem < 0.0001;
         }
 
-        private double RightTriangleAria(double leg1, double leg2)
+        private double RightTriangleArea(double leg1, double leg2)
         {
             return leg1 * leg2 / 2;
-        }          
+        }
     }
 }
