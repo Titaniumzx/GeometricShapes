@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricShapes", "GeometricShapes\GeometricShapes.csproj", "{7B8C8AE8-318B-480D-A2D5-8EB13C732712}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGeometricShapes", "TestGeometricShapes\TestGeometricShapes.csproj", "{BDEE1C85-1DBA-4052-A414-BA18AAD777EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B8C8AE8-318B-480D-A2D5-8EB13C732712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8C8AE8-318B-480D-A2D5-8EB13C732712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8C8AE8-318B-480D-A2D5-8EB13C732712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDEE1C85-1DBA-4052-A414-BA18AAD777EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDEE1C85-1DBA-4052-A414-BA18AAD777EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDEE1C85-1DBA-4052-A414-BA18AAD777EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDEE1C85-1DBA-4052-A414-BA18AAD777EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
